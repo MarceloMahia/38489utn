@@ -179,7 +179,7 @@ h2::after {
 }
 
 /* Submenú */
-.dropdown-content {
+.nav-menu .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
