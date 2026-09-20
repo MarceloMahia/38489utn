@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* 0. Cargar imágenes desde js/images.js (objeto IMAGES).
+        Para corregir un link, editá SOLO ese archivo. */
+  if (typeof IMAGES !== 'undefined') {
+    document.querySelectorAll('[data-img]').forEach((el) => {
+      const key = el.getAttribute('data-img');
+      const url = IMAGES[key];
+
+      if (!url) {
+        console.warn(`[images.js] No existe la clave "${key}" en IMAGES.`);
+        return;
+      }
+
+      if (el.tagName === 'IMG') {
+        el.src = url;
+      } else {
+        el.style.backgroundImage = `url('${url}')`;
+      }
+    });
+  } else {
+    console.warn('js/images.js no se cargó: revisá que esté incluido antes de script.js.');
+  }
+
   /* 1. Menú hamburguesa (responsive) */
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
@@ -19,6 +41,60 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* 1.b Submenú "Personajes": abrir/cerrar por click (no por hover) */
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  function closeAllDropdowns() {
+    dropdowns.forEach((dd) => {
+      dd.classList.remove('open');
+      const btn = dd.querySelector('.dropdown-btn');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  dropdowns.forEach((dropdown) => {
+    const btn = dropdown.querySelector('.dropdown-btn');
+    if (!btn) return;
+
+    btn.setAttribute('aria-haspopup', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault(); // el link es solo el disparador del submenú
+      const willOpen = !dropdown.classList.contains('open');
+      closeAllDropdowns();
+      if (willOpen) {
+        dropdown.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    // Al elegir un personaje del submenú, cerrarlo (y cerrar el menú mobile)
+    dropdown.querySelectorAll('.dropdown-content a').forEach((link) => {
+      link.addEventListener('click', () => {
+        closeAllDropdowns();
+        if (navMenu) navMenu.classList.remove('active');
+        if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+
+  // Cerrar si se hace click afuera del submenú
+  document.addEventListener('click', (e) => {
+    dropdowns.forEach((dropdown) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+        const btn = dropdown.querySelector('.dropdown-btn');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Cerrar con la tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllDropdowns();
+  });
 
   /* 2. Lightbox de galería, accesible con teclado */
   const galleryItems = document.querySelectorAll('.gallery-item');
