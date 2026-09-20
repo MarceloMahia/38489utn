@@ -195,8 +195,7 @@ h2::after {
   width: 100%;
 }
 
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
+.dropdown.open .dropdown-content {
   display: flex;
 }
 
