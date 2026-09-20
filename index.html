@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refugio TWD — Portal de Fans</title>
+  <meta name="description"
+    content="Portal de fans dedicado al universo del apocalipsis caminante: historia, personajes, facciones y galería.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <a href="#home" class="skip-link">Saltar al contenido</a>
+
+  <!-- NAV / HEADER -->
+  <header class="main-header">
+    <div class="logo">REFUGIO <span>// fan portal</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+      ☰
+    </button>
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#personajes" class="dropdown-btn">Personajes</a>
+          <ul class="dropdown-content">
+            <li><a href="#rick">Rick Grimes</a></li>
+            <li><a href="#daryl">Daryl Dixon</a></li>
+            <li><a href="#michonne">Michonne</a></li>
+            <li><a href="#negan">Negan</a></li>
+          </ul>
+        </li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#facciones">Facciones</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#sobrevivir">Sobrevivir</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">Aviso a supervivientes</span>
+      <h1>NO ABRIR. MUERTOS DENTRO.</h1>
+      <p>Un refugio para todo lo que dejó el mundo antes de la caída: historia, rostros conocidos y las reglas que te
+        mantienen vivo un día más.</p>
+      <p class="hero-counter" id="dayCounter"></p>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section id="historia" class="section container">
+    <h2>El comienzo del brote</h2>
+    <p class="section-lead">Antes de las murallas y los grupos, hubo un despertar en un hospital vacío. Así empezó todo
+      para los que quedaron.</p>
+    <div class="intro-grid">
+      <div class="card pulse-card">
+        <img data-img="doorsWarning" alt="Cartel de advertencia pintado a mano: No abrir, muertos dentro"
+          class="beat-image">
+        <div class="card-body">
+          <h3>Las puertas del hospital</h3>
+          <p>El primer aviso que encuentra todo superviviente. Pasá el cursor para sentir el latido detrás de la
+            advertencia.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img data-img="leaderBurden" alt="Retrato de un líder agotado por el peso de sostener a su grupo">
+        <div class="card-body">
+          <h3>La carga del liderazgo</h3>
+          <p>Cada decisión cuesta algo. Liderar en este mundo significa elegir todos los días entre lo correcto y lo
+            posible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAJES -->
+  <section id="personajes" class="section bg-panel container">
+    <h2>Rostros del refugio</h2>
+    <p class="section-lead">Algunos de los nombres que todo superviviente conoce, con lo que representan dentro del
+      grupo.</p>
+    <div class="character-grid">
+      <article class="character-card" id="rick">
+        <span class="character-role">Ex sheriff · líder fundador</span>
+        <h3>Rick Grimes</h3>
+        <p>Despertó en un mundo distinto al que dejó y desde entonces cargó con la tarea de mantener unido a lo que
+          quedaba de comunidad. Su historia es la de alguien que aprende a endurecerse sin perder del todo lo que lo
+          hacía humano.</p>
+      </article>
+      <article class="character-card" id="daryl">
+        <span class="character-role">Rastreador · lobo solitario</span>
+        <h3>Daryl Dixon</h3>
+        <p>Llegó sin confiar en nadie y terminó siendo el más leal del grupo. Su ballesta y su instinto de cazador lo
+          convirtieron en la primera línea de defensa cuando las cosas se complican.</p>
+      </article>
+      <article class="character-card" id="michonne">
+        <span class="character-role">Guerrera · estratega</span>
+        <h3>Michonne</h3>
+        <p>Sobrevivió sola mucho antes de unirse a un grupo, y esa disciplina se nota en cada decisión. Su katana es tan
+          famosa como su capacidad de mantener la calma cuando todo se derrumba.</p>
+      </article>
+      <article class="character-card" id="negan">
+        <span class="character-role">Líder rival · antagonista</span>
+        <h3>Negan</h3>
+        <p>Al frente de un grupo que impone el orden a través del miedo, representa la otra cara de la supervivencia: la
+          que decide que el poder importa más que la comunidad.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FACCIONES -->
+  <section id="facciones" class="section container">
+    <h2>El mapa de las facciones</h2>
+    <p class="section-lead">Así se fueron formando y cruzando las alianzas entre comunidades a lo largo del tiempo.</p>
+    <ol class="timeline">
+      <li data-step="1">
+        <h3>Alexandria</h3>
+        <p>Una comunidad amurallada que ofrece algo poco común: paredes, rutina y la ilusión de normalidad. El primer
+          lugar donde el grupo intenta dejar de sobrevivir y empezar a vivir.</p>
+      </li>
+      <li data-step="2">
+        <h3>Hilltop</h3>
+        <p>Una colonia agrícola que aporta recursos a cambio de protección. La alianza con Alexandria marca el inicio de
+          una red de comunidades que se cuidan entre sí.</p>
+      </li>
+      <li data-step="3">
+        <h3>El Reino</h3>
+        <p>Gobernado con un estilo propio y una defensa férrea de su territorio, se suma como tercer pilar de la
+          resistencia frente a las amenazas externas.</p>
+      </li>
+      <li data-step="4">
+        <h3>Los Salvadores</h3>
+        <p>La facción que rompe el equilibrio: exige tributo a cambio de "protección" y obliga a las demás comunidades a
+          decidir si resisten o se someten.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="section bg-panel">
+    <div class="container">
+      <h2>Galería de supervivientes</h2>
+      <p class="section-lead">Hacé clic en cualquier imagen para verla en grande.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item" tabindex="0">
+          <img data-img="hospitalDoors" alt="Puertas cerradas de un hospital abandonado">
+          <span class="gallery-caption">Las puertas del hospital</span>
+        </div>
+        <div class="gallery-item" tabindex="0">
+          <img data-img="leaderSad" alt="Retrato pensativo de un líder de grupo">
+          <span class="gallery-caption">El peso del liderazgo</span>
+        </div>
+        <div class="gallery-item" tabindex="0">
+          <img data-img="cityArrival" alt="Jinete solitario entrando a una ciudad desierta">
+          <span class="gallery-caption">Llegada a la ciudad</span>
+        </div>
+        <div class="gallery-item" tabindex="0">
+          <img data-img="daryl" alt="Rastreador armado con ballesta">
+          <span class="gallery-caption">El rastreador</span>
+        </div>
+        <div class="gallery-item" tabindex="0">
+          <img data-img="michonne" alt="Guerrera con katana lista para el combate">
+          <span class="gallery-caption">La guerrera</span>
+        </div>
+        <div class="gallery-item" tabindex="0">
+          <img data-img="negan" alt="Líder rival con bate cubierto de alambre">
+          <span class="gallery-caption">El líder rival</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+    <img id="lightboxImg" class="lightbox-img" src="" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <!-- SOBREVIVIR -->
+  <section id="sobrevivir" class="section container">
+    <h2>Reglas para sobrevivir</h2>
+    <p class="section-lead">Lo básico que todo recién llegado al refugio debería saber.</p>
+    <ul class="tips-list">
+      <li><strong>Silencio ante todo</strong>El ruido atrae. Movete despacio y evitá gritar, incluso en emergencias.
+      </li>
+      <li><strong>Nunca vayas solo</strong>Las salidas en pareja o grupo reducen el riesgo y multiplican las chances de
+        volver.</li>
+      <li><strong>Cuidá tus armas de cuerpo a cuerpo</strong>Las balas se terminan. Un buen filo o una herramienta
+        contundente no.</li>
+      <li><strong>Desconfiá primero, confiá después</strong>No todos los sobrevivientes tienen buenas intenciones.
+        Observá antes de acercarte.</li>
+      <li><strong>Marcá tus rutas de escape</strong>Antes de entrar a cualquier edificio, identificá al menos dos
+        salidas.</li>
+      <li><strong>Racioná todo</strong>Comida, agua y municiones rinden más de lo que pensás si las administrás bien.
+      </li>
+    </ul>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section bg-panel container">
+    <h2>Unite a la resistencia</h2>
+    <p class="section-lead">Dejá tus datos y nos pondremos en contacto si el refugio necesita gente como vos.</p>
+    <form id="contactForm" class="contact-form" novalidate>
+      <div class="form-group">
+        <label for="nombre">Nombre o apodo</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Superviviente 47">
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required placeholder="ejemplo@refugio.com">
+      </div>
+      <div class="form-group">
+        <label for="arma">Arma preferida</label>
+        <select id="arma" name="arma">
+          <option value="ballesta">Ballesta</option>
+          <option value="katana">Katana</option>
+          <option value="revolver">Revólver</option>
+          <option value="bate">Bate con alambre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Mensaje o ubicación</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required
+          placeholder="Dejá tus coordenadas o mensaje..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Enviar mensaje</button>
+      <p id="formFeedback" class="form-feedback" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 — Refugio TWD. Portal de fans hecho por y para sobrevivientes.</p>
+  </footer>
+
+  <script src="js/images.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
